@@ -9,7 +9,7 @@
         xmlns:web="clr-namespace:Microsoft.AspNetCore.Components.Web;assembly=Microsoft.AspNetCore.Components.Web"
         mc:Ignorable="d"
         Title="Blazor Hybrid WPF" Margin="0" Padding="0"
-        WindowStartupLocation="CenterScreen"  Height="800" Width="1200">
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <blazor:BlazorWebView  Margin="0" Padding="0" HostPage="wwwroot\index.html" Services="{DynamicResource services}">
             <blazor:BlazorWebView.RootComponents>
