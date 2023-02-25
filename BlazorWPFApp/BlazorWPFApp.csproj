@@ -9,7 +9,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="6.0.312" />
+	  <None Remove="LICENSE" />
+	  <None Remove="README.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AntDesign" Version="0.14.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="7.0.59" />
 	</ItemGroup>
 
 	<ItemGroup>

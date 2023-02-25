@@ -50,6 +50,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="AntDesign" Version="0.14.3" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 	<ItemGroup>
@@ -66,5 +67,11 @@
 		<Compile Update="Platforms\MacCatalyst\PlatformNameProvider.cs">
 		  <ExcludeFromCurrentConfiguration>false</ExcludeFromCurrentConfiguration>
 		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\pro_icon.svg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 </Project>
