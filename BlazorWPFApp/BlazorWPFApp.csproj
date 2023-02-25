@@ -26,4 +26,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\BlazorShared\BlazorShared.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="wwwroot\css\" />
+	</ItemGroup>
 </Project>
