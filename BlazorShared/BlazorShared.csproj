@@ -6,6 +6,17 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <None Remove="Style\atomic.css" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Style\atomic.css">
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	</ItemGroup>
+
 
 	<ItemGroup>
 		<SupportedPlatform Include="browser" />
@@ -17,6 +28,13 @@
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.3" />
 		<PackageReference Include="Microsoft.JSInterop" Version="7.0.3" />
 		<PackageReference Include="Microsoft.JSInterop.WebAssembly" Version="7.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\css\atomic.css">
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
 	</ItemGroup>
 
 </Project>
