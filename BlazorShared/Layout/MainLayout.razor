@@ -2,9 +2,8 @@
 @using System.Net.Http.Json
 @inherits LayoutComponentBase
 
-<AntDesign.ProLayout.BasicLayout 
-	Logo="@("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg")"
-	MenuData="_menuData">
+<AntDesign.ProLayout.BasicLayout Logo="@("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg")"
+								 MenuData="_menuData">
 	<RightContentRender>
 		<tool.Components.RightContent />
 	</RightContentRender>
@@ -21,12 +20,12 @@
 {
 	private MenuDataItem[] _menuData = { };
 
-	// [Inject] public HttpClient HttpClient { get; set; }
+	[Inject] public MenuService menuService { get; set; }
 
 	protected override async Task OnInitializedAsync()
 	{
 		await base.OnInitializedAsync();
-		// _menuData = [];
+		_menuData = menuService.GetMenus();
 
 	}
 
@@ -53,5 +52,5 @@
 				Href = "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor?WT.mc_id=DT-MVP-5003987",
 				BlankTarget = true,
 			}
-		};
+	};
 }

@@ -60,6 +60,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="AntDesign" Version="0.14.4" />
+		<PackageReference Include="Autofac" Version="6.5.0" />
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 	<ItemGroup>

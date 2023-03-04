@@ -8,4 +8,14 @@ public class PlatformNameProvider : IPlatformNameProvider
     {
         return "ASP.NET Core Blazor WebAssembly";
     }
+
+	public bool IsWebPlatfor()
+	{
+		return true;
+	}
+
+	public string UploadOrSelectDirectory()
+	{
+		throw new NotImplementedException();
+	}
 }

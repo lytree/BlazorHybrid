@@ -15,6 +15,8 @@
 
   <ItemGroup>
     <PackageReference Include="AntDesign" Version="0.14.4" />
+    <PackageReference Include="Autofac" Version="6.5.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.3" PrivateAssets="all" />
   </ItemGroup>

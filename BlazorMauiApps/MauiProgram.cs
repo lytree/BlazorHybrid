@@ -24,7 +24,6 @@ namespace BlazorMauiApps
 		builder.Logging.AddDebug();
 #endif
 			builder.Services.AddAntDesign();
-			builder.Services.AddSingleton<WeatherForecastService>();
 			builder.Services.AddSingleton<IPlatformNameProvider, PlatformNameProvider>();
 			return builder.Build();
 		}

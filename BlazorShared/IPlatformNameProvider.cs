@@ -8,4 +8,8 @@ namespace BlazorShared;
 public interface IPlatformNameProvider
 {
     string GetPlatformName();
+
+    bool IsWebPlatfor();
+
+    string UploadOrSelectDirectory();
 }

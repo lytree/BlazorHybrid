@@ -1,3 +1,4 @@
+using Autofac.Extensions.DependencyInjection;
 using BlazorServerApp;
 using BlazorShared;
 using BlazorShared.Data;
@@ -8,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAntDesign();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddAutofac();
 builder.Services.AddSingleton<IPlatformNameProvider, PlatformNameProvider>();
 var app = builder.Build();
 
@@ -20,7 +21,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection(); 
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
