@@ -24,6 +24,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorConfiguration.Test", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorUtils", "BlazorUtils\BlazorUtils.csproj", "{49CC389C-3052-4618-BB62-61AC149DA8DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wave.Tool", "Wave.Tool\Wave.Tool.csproj", "{0116AB32-54FF-4115-A358-C462DD74BC67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wave.Tool.Test", "test\Wave.Tool.Test\Wave.Tool.Test.csproj", "{79E8DBA7-ABB0-4BF7-A3AE-61C9C24F1075}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +68,14 @@ Global
 		{49CC389C-3052-4618-BB62-61AC149DA8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49CC389C-3052-4618-BB62-61AC149DA8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49CC389C-3052-4618-BB62-61AC149DA8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0116AB32-54FF-4115-A358-C462DD74BC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0116AB32-54FF-4115-A358-C462DD74BC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0116AB32-54FF-4115-A358-C462DD74BC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0116AB32-54FF-4115-A358-C462DD74BC67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79E8DBA7-ABB0-4BF7-A3AE-61C9C24F1075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E8DBA7-ABB0-4BF7-A3AE-61C9C24F1075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E8DBA7-ABB0-4BF7-A3AE-61C9C24F1075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E8DBA7-ABB0-4BF7-A3AE-61C9C24F1075}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

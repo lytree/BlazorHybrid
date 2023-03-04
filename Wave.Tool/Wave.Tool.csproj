@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetty.Buffers" Version="0.7.5" />
+    <PackageReference Include="FreeSql" Version="3.2.690" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.690" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TMS\" />
+    <Folder Include="CMS\" />
+    <Folder Include="BMS\" />
+  </ItemGroup>
+
+</Project>
