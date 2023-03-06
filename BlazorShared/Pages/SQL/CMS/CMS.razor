@@ -7,17 +7,23 @@
 <PageContainer Title="CMS 数据导入">
 	<Content>
 		<span>
-			Form pages are used to collect or verify information to users, and basic forms are common in scenarios
-			where there are fewer data items.
+			请确认选中目录下只有一个机组的数据,CMC所建测点名和SQLite内部测点名一致。
 		</span>
 	</Content>
 	<ChildContent>
 		<Card>
 			<GridRow>
 				<GridCol Span="24">
-					<AntDesign.Input @bind-Value="@directoryPath">
-						<AddOnAfter><Button OnClick="OpenDialog">选择文件夹</Button></AddOnAfter>
-					</AntDesign.Input>
+					@if (platformNameProvider.IsWebPlatfor())
+					{
+
+					}
+					else
+					{
+						<AntDesign.Input @bind-Value="@directoryPath">
+							<AddOnAfter><Button OnClick="OpenDialog">选择文件夹</Button></AddOnAfter>
+						</AntDesign.Input>
+					}
 				</GridCol>
 				<GridCol Span="16" Offset="8">
 					<Button Type="primary" OnClick="@(()=>{ _visible = true; })">
@@ -28,7 +34,7 @@
 
 		</Card>
 		<Modal Title="@title" Visible="@_visible" OnOk="@HandleOk" OnCancel="@HandleCancel">
-			
+
 		</Modal>
 	</ChildContent>
 

@@ -22,11 +22,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorConfiguration", "Blaz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorConfiguration.Test", "test\BlazorConfiguration.Test\BlazorConfiguration.Test.csproj", "{0C0A623D-74E4-4B67-BDEB-32ABC13D15AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorUtils", "BlazorUtils\BlazorUtils.csproj", "{49CC389C-3052-4618-BB62-61AC149DA8DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorUtils", "BlazorUtils\BlazorUtils.csproj", "{49CC389C-3052-4618-BB62-61AC149DA8DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wave.Tool", "Wave.Tool\Wave.Tool.csproj", "{0116AB32-54FF-4115-A358-C462DD74BC67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wave.Tool", "Wave.Tool\Wave.Tool.csproj", "{0116AB32-54FF-4115-A358-C462DD74BC67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wave.Tool.Test", "test\Wave.Tool.Test\Wave.Tool.Test.csproj", "{79E8DBA7-ABB0-4BF7-A3AE-61C9C24F1075}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wave.Tool.Test", "test\Wave.Tool.Test\Wave.Tool.Test.csproj", "{79E8DBA7-ABB0-4BF7-A3AE-61C9C24F1075}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
