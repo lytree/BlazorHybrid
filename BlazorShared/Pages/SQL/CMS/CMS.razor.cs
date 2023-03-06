@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace BlazorShared.Pages;
@@ -15,7 +16,7 @@ public partial class CMS
 	bool _visible = false;
 	string directoryPath = "/home/data";
 
-	[Inject] public IPlatformNameProvider platformNameProvider { get; set; }
+	[Inject] IPlatformNameProvider platformNameProvider { get; set; }
 
 	private void OpenDialog()
 	{
@@ -34,6 +35,46 @@ public partial class CMS
 	private void HandleCancel(MouseEventArgs e)
 	{
 		_visible = false;
+	}
+
+
+
+	int i = 0;
+	string editId;
+	record ItemData(string Id, string Age, string Address)
+	{
+		public string Name { get; set; }
+	};
+
+	ItemData[] listOfData = { };
+
+	void addRow()
+	{
+		listOfData = listOfData.Append(new($"{i}", "32", $"London, Park Lane no. {i}") { Name = $"Edward King {i}" });
+		i++;
+	}
+
+	void deleteRow(string id)
+	{
+		listOfData = listOfData.Where(d => d.Id != id).ToArray();
+	}
+
+	void startEdit(string id)
+	{
+		editId = id;
+	}
+
+	void stopEdit()
+	{
+		var editedData = listOfData.FirstOrDefault(x => x.Id == editId);
+		Console.WriteLine(JsonSerializer.Serialize(editedData));
+		editId = null;
+	}
+
+	protected override void OnInitialized()
+	{
+		addRow();
+		addRow();
 	}
 }
 
