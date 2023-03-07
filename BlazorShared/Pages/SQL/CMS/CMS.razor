@@ -14,36 +14,35 @@
 		<Card>
 			<GridRow Justify="center">
 				<GridCol Span="24">
-					<Button OnClick="addRow" Type="primary" Style="margin-bottom:16px">
-						Add a row
-					</Button>
+					<Select TItem="Organization"
+							TItemValue="int?"
+							DataSource="@_provinces"
+							@bind-Value="@_selectedProvince"
+							ValueName="@nameof(Organization.Id)"
+							LabelName="@nameof(Organization.Name)"
+							Placeholder="Select a province"
+							AllowClear
+							Style="width: 200px;margin-bottom: 16px"
+							OnSelectedItemChanged="OnSelectedItemChangedHandler">
+					</Select>
+
+					<Select DataSource="@_cities"
+							@bind-Value="@_selectedCity"
+							ValueName="@nameof(Machine.Id)"
+							LabelName="@nameof(Machine.Name)"
+							Placeholder="Select a city"
+							Style="width: 200px;margin-bottom: 16px"
+							AllowClear>
+					</Select>
 					<Table DataSource="listOfData" RowClassName="@(_=>"editable-row")" Bordered>
-						<PropertyColumn Width="30%" Property="c=>c.Name">
-							@if (editId == context.Id)
-							{
-								<Input Type="text" @bind-Value="context.Name" OnBlur="stopEdit" AutoFocus />
-							}
-							else
-							{
-								<div class="editable-cell-value-wrap" style="padding-right:24px" @onclick="()=>startEdit(context.Id)">
-									@context.Name
-								</div>
-							}
-						</PropertyColumn>
-						<PropertyColumn Property="c=>c.Age"></PropertyColumn>
-						<PropertyColumn Property="c=>c.Address"></PropertyColumn>
-						<ActionColumn Title="Action">
-							<Popconfirm Title="Sure to delete?"
-										OnConfirm="()=> deleteRow(context.Id)"
-										OkText="Yes"
-										CancelText="No">
-								<a>Delete</a>
-							</Popconfirm>
-						</ActionColumn>
+						<PropertyColumn Property="c=>c.Name"><TitleTemplate>文件名</TitleTemplate></PropertyColumn>
+						<PropertyColumn Property="c=>c.Status"><TitleTemplate>状态</TitleTemplate></PropertyColumn>
+						<PropertyColumn Property="c=>c.Context"><TitleTemplate>内容</TitleTemplate></PropertyColumn>
+						<PropertyColumn Property="c=>c.Createtime"><TitleTemplate>创建时间</TitleTemplate></PropertyColumn>
 					</Table>
 				</GridCol>
 			</GridRow>
-			<Divider>Text</Divider>
+			<Divider></Divider>
 			<GridRow Justify="space-around">
 				<GridCol Span="4">
 					@if (platformNameProvider.IsWebPlatfor())

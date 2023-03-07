@@ -19,7 +19,7 @@ public class SQLite
 		using IFreeSql fsql = new FreeSqlBuilder().UseConnectionString(DataType.Sqlite, $@"Data Source={path}")
 			.UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
 				.Build();
-		var list = fsql.Select<Wave.Tool.CMS.vibdata>().ToList();
+		var list = fsql.Select<CMS.vibdata>().ToList();
 
 		return list;
 	}
@@ -28,7 +28,7 @@ public class SQLite
 		using IFreeSql fsql = new FreeSqlBuilder().UseConnectionString(DataType.Sqlite, $@"Data Source={path}")
 			.UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
 				.Build();
-		var list = fsql.Select<Wave.Tool.TMS.vibdata>().ToList();
+		var list = fsql.Select<TMS.vibdata>().ToList();
 
 		return list;
 	}
@@ -37,7 +37,7 @@ public class SQLite
 		using IFreeSql fsql = new FreeSqlBuilder().UseConnectionString(DataType.Sqlite, $@"Data Source={path}")
 			.UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
 				.Build();
-		var list = fsql.Select<Wave.Tool.BMS.vibdata>().ToList();
+		var list = fsql.Select<BMS.vibdata>().ToList();
 		fsql.Dispose();
 		return list;
 	}

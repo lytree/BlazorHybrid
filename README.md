@@ -28,10 +28,10 @@
     - tailwindcss-cli
     - .net 6或以上
 - 运行
-    - `tailwindcss -i .\BlazorShared\Style\atomic.css -o .\BlazorShared\wwwroot\css\atomic.css  --watch`
+    - `tailwindcss -i .\Style\atomic.css -o .\wwwroot\css\atomic.css  --watch`
 
 - 构建
-    - `tailwindcss -i .\BlazorShared\Style\atomic.css -o .\BlazorShared\wwwroot\css\atomic.css  --minify`
+    - `tailwindcss -i .\Style\atomic.css -o .\wwwroot\css\atomic.css  --minify`
 
 
 

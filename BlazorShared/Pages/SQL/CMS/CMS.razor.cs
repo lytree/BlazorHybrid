@@ -18,6 +18,52 @@ public partial class CMS
 
 	[Inject] IPlatformNameProvider platformNameProvider { get; set; }
 
+
+	  protected override void OnInitialized()
+    {
+      
+        _provinces = new List<Organization>()
+        {
+            new Organization()
+            {
+                Id = 1,
+                Name = "Zhejiang",
+                Cities = new List<Machine>()
+                {
+                    new Machine { Id = 100, Name = "Hangzhou" },
+                    new Machine { Id = 101, Name = "Ningbo" },
+                    new Machine { Id = 102, Name = "Wenzhou" }
+                }
+            },
+            new Organization()
+            {
+                Id = 2,
+                Name = "Jiangsu",
+                Cities = new List<Machine>()
+                {
+                    new Machine { Id = 200, Name = "Nanjing" },
+                    new Machine { Id = 201, Name = "Suzhou" },
+                    new Machine { Id = 202, Name = "Zhenjiang" }
+                }
+            },
+            new Organization()
+            {
+                Id = 3,
+                Name = "Beijing"
+            },
+            new Organization()
+            {
+                Id = 4,
+                Name = "Shanghai",
+                Cities = null
+            }
+        };
+        _selectedProvince = 1;
+        _selectedCity = 100;
+    }
+
+
+
 	private void OpenDialog()
 	{
 		var path = platformNameProvider.UploadOrSelectDirectory();
@@ -38,44 +84,46 @@ public partial class CMS
 	}
 
 
+	class Organization
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public List<Machine> Cities { get; set; } = new List<Machine>();
+    }
 
-	int i = 0;
-	string editId;
-	record ItemData(string Id, string Age, string Address)
-	{
-		public string Name { get; set; }
-	};
+    class Machine
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+
+    List<Organization> _provinces;
+    List<Machine> _cities = new List<Machine>();
+
+    int? _selectedProvince;
+    int? _selectedCity;
+
+  
+
+    private void OnSelectedItemChangedHandler(Organization value)
+    {
+        _cities = value?.Cities;
+        if (_cities?.Any(x => x.Id == _selectedCity) != true)
+        {
+            _selectedCity = _cities?.FirstOrDefault()?.Id;
+        }
+    }
+
+
+
+
+	record ItemData(string Id,string Name, string Context, int Status,string Createtime);
+
 
 	ItemData[] listOfData = { };
 
-	void addRow()
-	{
-		listOfData = listOfData.Append(new($"{i}", "32", $"London, Park Lane no. {i}") { Name = $"Edward King {i}" });
-		i++;
-	}
+	
 
-	void deleteRow(string id)
-	{
-		listOfData = listOfData.Where(d => d.Id != id).ToArray();
-	}
-
-	void startEdit(string id)
-	{
-		editId = id;
-	}
-
-	void stopEdit()
-	{
-		var editedData = listOfData.FirstOrDefault(x => x.Id == editId);
-		Console.WriteLine(JsonSerializer.Serialize(editedData));
-		editId = null;
-	}
-
-	protected override void OnInitialized()
-	{
-		addRow();
-		addRow();
-	}
 }
 
 

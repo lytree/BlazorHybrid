@@ -34,6 +34,7 @@ namespace BlazorWPFApp
 				x.PrimaryColor = "daybreak";
 				x.ContentWidth = "Fluid";
 				x.HeaderHeight = 64;
+				x.FooterRender = false;
 			});
 
 			BuildFreeSQLs(serviceCollection);
