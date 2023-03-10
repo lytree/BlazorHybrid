@@ -13,10 +13,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazorWPFApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class MainWindow : Window
 	{
 		public MainWindow()
 		{
@@ -34,6 +34,7 @@ namespace BlazorWPFApp
 				x.PrimaryColor = "daybreak";
 				x.ContentWidth = "Fluid";
 				x.HeaderHeight = 64;
+				x.FooterRender = false;
 			});
 
 			BuildFreeSQLs(serviceCollection);

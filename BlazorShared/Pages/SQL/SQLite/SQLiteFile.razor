@@ -14,11 +14,26 @@
 		<Card>
 			<GridRow>
 				<GridCol Span="6">
-					<Select>
+					<Select TItem="Organization"
+							TItemValue="int?"
+							DataSource="@_provinces"
+							@bind-Value="@_selectedProvince"
+							ValueName="@nameof(Organization.Id)"
+							LabelName="@nameof(Organization.Name)"
+							Placeholder="Select a province"
+							AllowClear
+							Style="width: 200px;margin-bottom: 16px"
+							OnSelectedItemChanged="OnSelectedItemChangedHandler">
 					</Select>
-				</GridCol>
-				<GridCol Span="6">
-					<Select>
+					</GridCol>
+					<GridCol Span="6">
+					<Select DataSource="@_cities"
+							@bind-Value="@_selectedCity"
+							ValueName="@nameof(Machine.Id)"
+							LabelName="@nameof(Machine.Name)"
+							Placeholder="Select a city"
+							Style="width: 200px;margin-bottom: 16px"
+							AllowClear>
 					</Select>
 				</GridCol>
 				<GridCol Span="6" Offset="6">
@@ -41,7 +56,17 @@
 					</Button>
 				</GridCol>
 			</GridRow>
-
+			<Divider></Divider>
+			<GridRow>
+				<GridCol Span="24">
+					<Table DataSource="listOfData" RowClassName="@(_=>"editable-row")" Bordered>
+						<PropertyColumn Property="c=>c.Name"><TitleTemplate>文件名</TitleTemplate></PropertyColumn>
+						<PropertyColumn Property="c=>c.Status"><TitleTemplate>状态</TitleTemplate></PropertyColumn>
+						<PropertyColumn Property="c=>c.Context"><TitleTemplate>内容</TitleTemplate></PropertyColumn>
+						<PropertyColumn Property="c=>c.Createtime"><TitleTemplate>创建时间</TitleTemplate></PropertyColumn>
+					</Table>
+				</GridCol>
+			</GridRow>
 		</Card>
 		<Modal Title="@title" Visible="@_visible" OnOk="@HandleOk" OnCancel="@HandleCancel">
 

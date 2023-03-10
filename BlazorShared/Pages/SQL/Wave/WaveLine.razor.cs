@@ -14,7 +14,6 @@ namespace BlazorShared.Pages.SQL.Wave;
 
 public partial class WaveLine
 {
-	IChartComponent chartLine;
 	object[] data;
 	LineConfig config4 = new LineConfig
 	{
@@ -40,9 +39,10 @@ public partial class WaveLine
 		{
 			Position = "right-top"
 		},
-		Slider = new Slider {
+		Slider = new Slider
+		{
 			Start = 0.1,
-			End =100,
+			End = 100,
 		},
 		SeriesField = "measdefid",
 		Color = new string[] { "#1979C9", "#D62A0D", "#FAA219" },
@@ -56,25 +56,25 @@ public partial class WaveLine
 
 		data = budilData();
 
-		//await chartLine.ChangeData(data);
 
 		await base.OnInitializedAsync();
 	}
 	private object[] budilData()
 	{
-		var datas = SQLite.ReadTMSSQLite(@"D:\天津市天津城区宝坻区大唐风电场\CMSDATA\TOWERDATA\天津市天津城区宝坻区大唐风电场\2023-01\10000001\2023-01-01\天津市天津城区宝坻区大唐风电场_10000001_2023-01-01-00-00-01-554.tms");
+		var datas = SQLite.ReadTMSSQLite(@"F:\sqlite\新疆伊犁伊宁中核风电场_10000004_2023-02-12-00-00-01-422.tms");
 		List<object> data = new();
 		foreach (var item in datas)
 		{
+			Console.WriteLine(item);
 
-			var floats = WaveUtils.ToFloat(item.wave);
+			var floats = WaveUtils.ToFloat((byte[])item["wave"]);
 			Enumerable.Range(0, floats.Length).ForEach(num =>
 			{
 				data.Add(new
 				{
 					value = floats[num],
-					measdefid = item.measdefid,
-					date = ((item.datalength / item.samplingrate * 1.0) / item.datalength) * num
+					measdefid = item["measdefid"],
+					date = ((Convert.ToInt32(item["datalength"]) / Convert.ToInt32(item["samplingrate"]) * 1.0) / Convert.ToInt32(item["datalength"])) * num
 				});
 			});
 
