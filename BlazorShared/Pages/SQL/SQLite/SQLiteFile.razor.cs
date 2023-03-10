@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlazorShared.Pages;
 
-public partial class CMS
+public partial class SQLiteFile
 {
 	string title = "Seeting";
 	bool _visible = false;

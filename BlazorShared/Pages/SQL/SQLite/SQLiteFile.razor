@@ -1,28 +1,38 @@
 ﻿@namespace BlazorShared.Pages
 
 
-@page "/SQL/CMS"
+@page "/SQL/SQLite"
 
 
 <PageContainer Title="CMS 数据导入">
 	<Content>
 		<span>
-			请确认选中目录下只有一个机组的数据,CMC所建测点名和SQLite内部测点名一致。
+			请确认选中目录下只有一个机组的数据
 		</span>
 	</Content>
 	<ChildContent>
 		<Card>
 			<GridRow>
-				<GridCol Span="24">
+				<GridCol Span="6">
+					<Select>
+					</Select>
+				</GridCol>
+				<GridCol Span="6">
+					<Select>
+					</Select>
+				</GridCol>
+				<GridCol Span="6" Offset="6">
 					@if (platformNameProvider.IsWebPlatfor())
 					{
 
 					}
 					else
 					{
-						<AntDesign.Input @bind-Value="@directoryPath">
-							<AddOnAfter><Button OnClick="OpenDialog">选择文件夹</Button></AddOnAfter>
-						</AntDesign.Input>
+						@*						<AntDesign.Input @bind-Value="@directoryPath">
+					<AddOnAfter>*@
+						<Button OnClick="OpenDialog">选择文件夹</Button>
+						@*								</AddOnAfter>
+					</AntDesign.Input>*@
 					}
 				</GridCol>
 				<GridCol Span="16" Offset="8">
